@@ -7,8 +7,8 @@ a,b = sp.symbols("a b")
 x_params = [sp.symbols(f'x{c}') for c in range(1,args_num + 1)]
 y_params = [sp.symbols(f'y{c}') for c in range(1,args_num + 1)]
 
-x_values = list(df["x"])
-y_values = list(df["y"])
+x_values = list(df["horas_trabalhadas"])
+y_values = list(df["dinheiro"])
 
 values = {}
 J = 0
@@ -34,8 +34,12 @@ print(f"b = {b_real}")
 
 min_error = J.subs(values).subs({a: a_real, b: b_real})
 print(f"Erro minimo: {min_error}")
+if min_error == 0:
+    print("Note que os dados estāo dispostos de forma completamente linear")
+else:
+    print("Note que os dados nāo estāo dispostos de forma completamente linear")
 
-horas = int(input("Quantidade de horas estudadas:"))
-calcular_nota = lambda x:a_real*x + b_real
-nota = calcular_nota(horas)
-print(f"Voce tirou {nota}!")
+horas_trabalhadas = float(input("Horas trabalhadas: "))
+calcular_dinheiro = lambda x:a_real*x + b_real
+nota = calcular_dinheiro(horas_trabalhadas)
+print(f"Dinheiro ganho: {nota:.2f}!")
