@@ -92,3 +92,4 @@ $$
 Em um modelo com n variáveis, teremos n + 1 parâmetros que, ao calcular as derivadas parciais da soma dos erros quadráticos em relação a cada um deles, formam um sistema (n + 1) × (n + 1) para resolver.
 Ao resolver o sistema, encontraremos o valor dos parâmetros que minimizam a soma dos erros quadráticos.
 
+**OBS**:Como o modelo de regressāo linear prevê resultados de acordo com uma reta, sempre podemos encontrar uma reta mais distante dos valores dados em treinamento, ou seja, sempre podemos encontrar uma reta cuja soma dos erros quadráticos seja maior que a reta anterior, o que significa que as derivadas parciais indicam a reta que minimiza a SSE, nāo a que maximiza
